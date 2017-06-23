@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script>
+
+const config = {
+  apiKey: "AIzaSyAyPFAZInMyPgIpaGrFhqfiZJ_iQkSjKBs",
+  authDomain: "cpsurveytest.firebaseapp.com",
+  databaseURL: "https://cpsurveytest.firebaseio.com",
+  projectId: "cpsurveytest",
+  storageBucket: "",
+  messagingSenderId: "461303632771"
+};
+firebase.initializeApp(config);
+/*
+    db key변경 테스트
+*/
+var db = firebase.database();
+var ref = db.ref("/results/-KnCSAtaRQ48hyk0jo9r");
+var keys = [{text:"노랑"},{text:"파랑"}, {text:"예e시3"}];
+console.log( JSON.parse(JSON.stringify(keys)) );
+var prevData = [];
+ref.once( "value", function(snapshot){
+    var currentData = snapshot.val();
+    keys.forEach( function( value){
+        if( currentData[value.text]){
+            console.log("이건 값이 있네!",  );
+        }
+        console.log( value.text );
+    });
+    for( var key in currentData ){
+        var label = keys.shift();
+        console.log( key, currentData[key].count);
+        /*if( label.text != key ){
+            //db.ref("/results/-KnCSAtaRQ48hyk0jo9r/"+label.text+"/count").set(currentData[key].count);
+            //db.ref("/results/-KnCSAtaRQ48hyk0jo9r/"+ key ).remove();
+        }*/
+    }
+    console.log( prevData );
+});
+
+
+</script>
+</body>
+</html>

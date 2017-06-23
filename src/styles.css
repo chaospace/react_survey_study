@@ -1,0 +1,57 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+
+.survey-edit-list .input-group{
+    margin-bottom: 10px;
+}
+
+/* 리스트 스타일*/
+.survey-list-group { list-style-type: none; padding:0; }
+.survey-list-item {
+    position: relative;
+    display: table;
+    width:100%;
+    border: 1px solid #ddd;
+    margin-bottom: -1px;
+    color:#555;
+    background: white;
+}
+
+.survey-list-item:hover{
+    background:#efefef;
+    border: 1px solid #337ab7;
+    z-index: 10;
+}
+
+.survey-list-item .list-heading{ font-size:1.4rem; }
+.survey-list-item .list-text{ font-size:0.8rem; }
+.content{ width:70%; }
+.side-content{ width:30%; text-align: right; }
+.content, .side-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content, .side-content button{
+    margin:2px 2px;
+}
+
+.survey-list-item:last-child{ margin-bottom: 0; }
+
+.survey-list-item a {
+    text-decoration: none;
+    display: block;
+    padding:10px;
+    color:black;
+}
+
+.survey-list-item a:hover { color:#337ab7; }
+
+.survey-list-item .delete-area{
+    position: absolute;
+    right: 10px;
+    top:16px;
+}
+
+.page-body .bottom-control {
+    margin:20px 0;
+}
